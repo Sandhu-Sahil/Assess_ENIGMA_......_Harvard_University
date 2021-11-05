@@ -2,11 +2,7 @@
 
 >Don't judge the name, it's given by me and that's how I am !!
 
-<br>
- 
-## <mark style="background-color: white; color: black;"><b>Video Discription:</b></mark>  <URL HERE>
-
-<br>
+## <mark style="background-color: white; color: black;"><b>Video Discription:</b></mark>  <https://youtu.be/vZalumjvILg>
 
 ## <mark style="background-color: white; color: black;"><b>Text Description:</b></mark>
 
@@ -65,7 +61,7 @@ In the user interface, you have to just register or log in as a user on this web
 <br>
 
 <p style="text-decoration: underline overline"><b>TO USE THIS WEB APPLICATION YOU HAVE TO JUST INSTALL AND RUN THIS APPLICATION USING FLASK
-<br><br>AND THEN JUST DISTRIBUTE THE LINK YOU GET FROM FLASK SERVER TO ALL WHO WANT TO USE THIS WEB APPLICATION
+<br>AND THEN JUST DISTRIBUTE THE LINK YOU GET FROM FLASK SERVER TO ALL WHO WANT TO USE THIS WEB APPLICATION
 
 <br>
 
