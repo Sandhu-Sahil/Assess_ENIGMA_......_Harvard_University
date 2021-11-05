@@ -69,5 +69,4 @@ In the user interface, you have to just register or log in as a user on this web
 
 >> A quick word on [Academic Honesty](https://cs50.harvard.edu/x/2021/honesty/). Before copying you should be aware that this web application is under [my](https://github.com/Sandhu-Sahil) copyright, so you can only use this application, can't submit or sanction it under your name. If caught the consequences will be disastrous. So be careful !!
 
- 
- [embed]https://github.com/Sandhu-Sahil/Assess_ENIGMA_......_Harvard_University/blob/master/CS50x%20Cretificate%20From%20Harvard%20University.pdf[/embed]
+ ![Final Certificate](https://github.com/Sandhu-Sahil/Assess_ENIGMA_......_Harvard_University/blob/master/CS50x.png)
