@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Responses
+{% endblock %}
+
+{% block main %}
+    <form action="/search" method="post">
+        <header style="font-size: 11px"><mark>Forum</mark></header>
+        <div class="form-group">
+            <select list="ts" name="paper_id" autofocus class="form-control">
+            <datalist id="ts">
+                {% for title in t %}
+                    <option value="{{title['paper_id']}}">{{title['title']}}</option>
+                {% endfor %}
+            </datalist>
+            </select>
+            
+        </div>
+        <button class="btn btn-primary" type="submit">Check responses</button>
+    </form>
+{% endblock %}

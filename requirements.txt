@@ -1,0 +1,7 @@
+Libraries you need to install to run this web application
+
+cs50
+SQL
+Flask
+Flask-Session
+requests

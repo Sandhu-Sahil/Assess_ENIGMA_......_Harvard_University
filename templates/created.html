@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Created
+{% endblock %}
+
+{% block main %}
+    {% for paper_id in t %}
+        <div>
+            <div >
+                <p><b><mark>
+                    FORUM ID: {{ paper_id['paper_id'] }}
+                </mark></b></p>
+            </div>
+            <div >
+                <p><b><mark>
+                    {{ paper_id['title'] }}, pass: {{ paper_id['pass'] }}
+                </mark></b></p>
+            </div>
+            <div style="display:inline-block;">
+                <form action="/opened" method="post">
+                    <button class="btn btn-primary" type="submit" name="button3" value="{{paper_id['paper_id']}}">Open and Edit</button>
+                </form>
+                <form action="/deleteF" method="post">
+                    <button class="btn btn-primary" type="submit" name="button5" value="{{paper_id['paper_id']}}">Delete</button>
+                </form>
+            </div>
+        </dic>
+        <hr>
+    {% endfor %}
+{% endblock %}

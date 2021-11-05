@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 30px"><strong><mark>{{ t[0]['title'] }}</mark></strong></header>
+    <div >
+        <p><b><mark>
+            Question:: {{ r[0]['question'] }}
+        </mark></b></p>
+    </div>
+    <div >
+        <div>
+        <p><b><mark>
+            A) {{ r[0]['o1'] }}
+        </mark></b></p>
+        <p><b><mark>
+            B) {{ r[0]['o2'] }}
+        </mark></b></p>
+        <p><b><mark>
+            C) {{ r[0]['o3'] }}
+        </mark></b></p>
+        <p><b><mark>
+            D) {{ r[0]['o4'] }}
+        </mark></b></p>
+        </div>
+        <p><b><mark>
+            Correct option) {{ r[0]['correct'] }}
+        </mark></b></p>
+    </div>
+    <form action="/editingO" method="post">
+        <div class="form-group">
+            <select list="tpes" name="tpe" autofocus class="form-control">
+            <datalist style="display:none;" id="tpes">
+                <option value="question">Question</option>
+                <option value="o1">Option A</option>
+                <option value="o2">Option B</option>
+                <option value="o3">Option C</option>
+                <option value="o4">Option D</option>
+                <option value="correct">Correct option</option>
+            </datalist>
+            </select>
+        </div>
+        <div class="form-group">
+            <input size="130" maxlength="10000000000000" autocomplete="off" class="form-control" name="change" placeholder="Changes to commit" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit" name="question_id" value="{{r[0]['Question_id']}}">EDIT</button>
+    </form>
+    <hr>
+    <form action="/editingOO" method="post">
+        <button class="btn btn-primary" type="submit" name="question_id" value="{{r[0]['Question_id']}}">Done All, commit All and Return</button>
+    </form>
+{% endblock %}

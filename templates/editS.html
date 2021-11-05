@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 30px"><strong><mark>{{ t[0]['title'] }}</mark></strong></header>
+    <div >
+        <p><b><mark>
+            Question:: {{ r[0]['question'] }}
+        </mark></b></p>
+    </div>
+    <form action="/editingS" method="post">
+        <div class="form-group">
+            <input size="130" maxlength="10000000000000" autocomplete="off" class="form-control" name="change" placeholder="Changes to commit" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit" name="question_id" value="{{r[0]['question_id']}}">EDIT</button>
+    </form>
+    <hr>
+    <form action="/editingSS" method="post">
+        <button class="btn btn-primary" type="submit" name="question_id" value="{{r[0]['question_id']}}">Done All, commit All and Return</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 30px"><strong><mark>{{ o[0]['title'] }} submitted by {{u[0]['username']}}</mark></strong></header>
+    <header style="font-size: 11px"><mark>Forum</mark></header>
+    <hr>
+    {% if t != 'Nonee' %}
+        {% for i in range(lo) %}
+            <div>
+                <div>
+                    <p><b><mark>
+                        Question:: {{ t[i]['question'] }}
+                    </mark></b></p>
+                </div>
+                <div >
+                    <p><b><mark>
+                        A) {{ t[i]['o1'] }}
+                    </mark></b></p>
+                    <p><b><mark>
+                        B) {{ t[i]['o2'] }}
+                    </mark></b></p>
+                    <p><b><mark>
+                        C) {{ t[i]['o3'] }}
+                    </mark></b></p>
+                    <p><b><mark>
+                        D) {{ t[i]['o4'] }}
+                    </mark></b></p>
+                </div>
+                <p><b><mark>
+                    Response: {{ r1[i]['response'] }}
+                </mark></b></p>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endif %}
+    {% if r != 'Nonee' %}
+        {% for i in range(ls) %}
+            <div>
+                <div >
+                    <p><b><mark>
+                        Question:: {{ r[i]['question'] }}
+                    </mark></b></p>
+                </div>
+                <div>
+                    <p><b><mark>
+                        Response: {{ r2[i]['response'] }}
+                    </mark></b></p>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

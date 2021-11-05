@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Responses
+{% endblock %}
+
+{% block main %}
+    {% for i in range(r) %}
+        <div>
+            <div >
+                <div>
+                <p><b><mark>
+                    .db ID: {{ t[i]['paper_id'] }}
+                </mark></b></p>
+                <p><b><mark>
+                    {{ l[i] }}
+                </mark></b></p>
+                </div>
+            </div>
+            <form action="/viewU" method="post">
+                <button class="btn btn-primary" type="submit" name="button5" value="{{t[i]['paper_id']}}">View your responses</button>
+            </form>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

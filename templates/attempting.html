@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Attempting
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 30px"><strong><mark>{{ o[0]['title'] }}</mark></strong></header>
+    <header style="font-size: 11px"><mark>Forum</mark></header>
+    <br>
+    <br>
+    <form action="/submitted" method="post">
+        {% if t != 'Nonee' %}
+            {% for i in range(lo) %}
+                <div>
+                    <div>
+                        <p><b><mark>
+                            Question:: {{ t[i]['question'] }}
+                        </mark></b></p>
+                    </div>
+                    <div >
+                        <p><b><mark>
+                            A) {{ t[i]['o1'] }}
+                        </mark></b></p>
+                        <p><b><mark>
+                            B) {{ t[i]['o2'] }}
+                        </mark></b></p>
+                        <p><b><mark>
+                            C) {{ t[i]['o3'] }}
+                        </mark></b></p>
+                        <p><b><mark>
+                            D) {{ t[i]['o4'] }}
+                        </mark></b></p>
+                    </div>
+                    <select list="tes" name="{{i}}" autofocus class="form-control">
+                    <datalist id="tes">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </datalist>
+                    </select>
+                </div>
+                <hr>
+            {% endfor %}
+        {% endif %}
+
+        {% if r != 'Nonee' %}
+            {% for i in range(ls) %}
+                <div>
+                    <div >
+                        <p><b><mark>
+                            Question:: {{ r[i]['question'] }}
+                        </mark></b></p>
+                    </div>
+                    <div class="form-group">
+                        <input size="130" autocomplete="off" class="form-control" name="{{lo + i}}" maxlength="10000000000000" placeholder="Answer..." type="text">
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+        {% endif %}
+        <button class="btn btn-primary" name="paper_id" value="{{p}}" type="submit">Done!! Submit...</button>
+    </form>
+{% endblock %}

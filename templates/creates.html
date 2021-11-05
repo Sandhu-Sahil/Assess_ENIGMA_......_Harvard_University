@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Creating
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 30px"><strong><mark>{{ title }}</mark></strong></header>
+    <header style="font-size: 11px"><mark>Make Forum</mark></header>
+    <br>
+    <form action="/createsO" method="post">
+        <div class="form-group">
+            <hr>
+            <h6><mark> Multiple Choice </mark></h6>
+            <br>
+            <div class="form-group">
+                <input size="130" autocomplete="off" class="form-control" name="question" maxlength="10000000000000" placeholder="Add multiple choice question here !!" type="text">
+            </div>
+            <div class="form-group">
+                <mark>A)</mark>
+                <input size="20" autocomplete="off" class="form-control" name="o1" maxlength="1000000000" placeholder="Option A" type="text">
+                <mark>B)</mark>
+                <input size="20" autocomplete="off" class="form-control" name="o2" maxlength="1000000000" placeholder="Option B" type="text">
+                <mark>C)</mark>
+                <input size="20" autocomplete="off" class="form-control" name="o3" maxlength="1000000000" placeholder="Option C" type="text">
+                <mark>D)</mark>
+                <input size="20" autocomplete="off" class="form-control" name="o4"  placeholder="Option D" type="text">
+            </div>
+            <div class="form-group">
+                <mark>Correct Option:</mark>
+                <select list="types" name="correct" placeholder="Select correct option" class="form-control">
+                <datalist id="types">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </datalist>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit" name="button1" value={{paper_id}}>Add</button>
+        </div>
+    </form>
+    <hr>
+    <hr style="height:5px;">
+    <hr>
+
+    <form action="/createsS" method="post">
+        <div class="form-group">
+            <h6><mark> Subjective </mark></h6>
+            <br>
+            <div class="form-group">
+                <input size="130" autocomplete="off" class="form-control" name="questionsub" maxlength="10000000000000" placeholder="Add question here !!" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit" name="button2" value={{paper_id}}>Add</button>
+            <hr>
+        </div>
+    </form>
+    <form action="/created">
+        <button class="btn btn-primary" type="submit">Done Submit and Create</button>
+    </form>
+{% endblock %}

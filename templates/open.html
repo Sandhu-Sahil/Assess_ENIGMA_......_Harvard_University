@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Opened
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 30px"><strong><mark>{{ o[0]['title'] }}</mark></strong></header>
+    <header style="font-size: 11px"><mark>Forum</mark></header>
+    <br>
+    <br>
+
+    {% if (t == 'Nonee') and (r == 'Nonee') %}
+    <form action="/add" method="post">
+        <button class="btn btn-primary" type="submit" name="button5" value="{{p}}">Add Questions</button>
+    </form>
+    <hr>
+    <br>
+    {% endif %}
+
+    {% if t != 'Nonee' %}
+        <form action="/add" method="post">
+            <button class="btn btn-primary" type="submit" name="button5" value="{{t[0]['paper_id']}}">Add Questions</button>
+        </form>
+        <hr>
+        <br>
+        {% for paper_id in t %}
+            <div>
+                <div >
+                    <p><b><mark>
+                        Question:: {{ paper_id['question'] }}
+                    </mark></b></p>
+                </div>
+                <div >
+                    <div>
+                    <p><b><mark>
+                        A) {{ paper_id['o1'] }}
+                    </mark></b></p>
+                    <p><b><mark>
+                        B) {{ paper_id['o2'] }}
+                    </mark></b></p>
+                    <p><b><mark>
+                        C) {{ paper_id['o3'] }}
+                    </mark></b></p>
+                    <p><b><mark>
+                        D) {{ paper_id['o4'] }}
+                    </mark></b></p>
+                    </div>
+                    <p><b><mark>
+                        Correct option) {{ paper_id['correct'] }}
+                    </mark></b></p>
+                </div>
+                <form action="/editO" method="post">
+                    <button class="btn btn-primary" type="submit" name="button5" value="{{paper_id['Question_id']}}">Edit</button>
+                </form>
+                <form action="/deleteQuestionO" method="post">
+                    <button class="btn btn-primary" type="submit" name="button5" value="{{paper_id['Question_id']}}">Delete</button>
+                </form>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endif %}
+
+    {% if r != 'Nonee' %}
+        {% if t == 'Nonee' %}
+            <form action="/add" method="post">
+                <button class="btn btn-primary" type="submit" name="button5" value="{{r[0]['paper_id']}}">Add Questions</button>
+            </form>
+            <hr>
+            <br>
+        {% endif %}
+        {% for paper_id in r %}
+            <div>
+                <div >
+                    <p><b><mark>
+                        Question:: {{ paper_id['question'] }}
+                    </mark></b></p>
+                </div>
+                <form action="/editS" method="post">
+                    <button class="btn btn-primary" type="submit" name="button5" value="{{paper_id['question_id']}}">Edit</button>
+                </form>
+                <form action="/deleteQuestionS" method="post">
+                    <button class="btn btn-primary" type="submit" name="button5" value="{{paper_id['question_id']}}">Delete</button>
+                </form>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

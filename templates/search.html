@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Searched
+{% endblock %}
+
+{% block main %}
+    <header style="font-size: 25px"><mark>Who has submitted this forum</mark></header>
+    <hr>
+    <br>
+    <form action="/viewC" method="post">
+        <div class="form-group">
+            <select list="t" name="user_id" autofocus class="form-control">
+            <datalist id="t">
+                {% for i in range(r) %}
+                    <option value="{{o[i]['user_id']}}">{{l[i]}}</option>
+                {% endfor %}
+            </datalist>
+            </select>
+        </div>
+        <button class="btn btn-primary" name="paper_id" value="{{p}}" type="submit">View responses</button>
+        <hr>
+    </form>
+
+{% endblock %}
